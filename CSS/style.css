@@ -22,6 +22,7 @@ header {
   top: calc(12% - 5vw);
   width: calc(40rem + 30vw);
   text-align: center;
+  z-index: 1;
 }
 
 /* Moon */
@@ -29,15 +30,22 @@ header {
   position: absolute;
   top: calc(35% - 15vw);
   right: 10%;
+  z-index: 1;
 }
 
 /* Moon reflection */
-:nth-child(3 of header > img) {
-  display: none;
-}
+#reflectMoon  {
+    display: inline-block;
+    position: absolute;
+    top: clamp(-3%, calc(15% - 14vw), 13%);
+    right: 10%;
+    z-index: 1;
+    transform: scale(1, -1);
+    opacity: .6;
+  }
 
 /* Mountain */
-:nth-child(4 of header > img) {
+:nth-child(3 of header > img) { /* Might need to target better. This should do the trick.*/
   position: absolute;
   bottom: 0;
   min-width: 100%;
@@ -45,14 +53,173 @@ header {
   max-height: 75%;
 }
 
-@media screen and (min-width: 800px) { /* Why does 72.0rem not work as intended? */
-  :nth-child(3 of header > img) {
+/* About me section */
+#aboutMe {
+  background: linear-gradient(to bottom, #007A8D 20%, #2DFE54);
+  padding-top: 10rem;
+  position: relative;
+  /* Grid code. */
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-auto-rows: 2fr 1fr 2fr 2fr;
+  place-items: center;
+}
+
+#aboutMe > #bull {
+  border-radius: 50%;
+  grid-area: 1 / 2 / 2 / 3;
+  text-align: center;
+}
+
+#aboutMe > h1 {
+  margin: 0;
+  grid-area: 2 / 2 / 3 / 3;
+  text-align: center;
+  font-size: calc(2.8rem + .5vw);
+  font-family: 'Merienda', cursive;
+  font-weight: 700;
+  color: #FFD700;
+  text-shadow: 
+  -1px -1px 0 #fff,
+  1px -1px 0 #fff,
+  -1px 1px 0 #fff,
+  1px 1px 0 #fff;
+}
+
+#aboutMe > p {
+  grid-area: 3 / 2 / 4 / 3;
+  font-size: calc(1.8rem + .5vw);
+  margin: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 
+  -1px -1px 0 #FFD700,
+  1px -1px 0 #FFD700,
+  -1px 1px 0 #FFD700,
+  1px 1px 0 #FFD700;
+}
+
+.container {
+  background: linear-gradient(#2DFE54 10%, #ff9653);
+  padding-top: 10rem;
+}
+
+#skillExpress {
+  margin: 0 auto;
+  width: 80%;
+  /* Flex Properties */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: calc(2rem + 1vw);
+}
+
+#skillExpress > * {
+  width: 100%;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  font-size: calc(2.5rem + .5vw);
+  font-family: 'Merienda', cursive;
+  font-weight: 700;
+  color: #0096FF;
+  text-shadow: 
+  -1px -1px 0 #fff,
+  1px -1px 0 #fff,
+  -1px 1px 0 #fff,
+  1px 1px 0 #fff;
+}
+
+h3 {
+  margin: 0 0 calc(1rem + 1vw);
+  font-size: calc(2.2rem + .5vw);
+  font-family: 'Merienda', cursive;
+  font-weight: 300;
+  color: #0096FF;
+  text-shadow: 
+  -1px -1px 0 #fff,
+  1px -1px 0 #fff,
+  -1px 1px 0 #fff,
+  1px 1px 0 #fff;
+}
+
+#leftDiv > p {
+  margin-bottom: calc(2rem + 1vw);
+  font-size: calc(1.8rem + .5vw);
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 
+  -1px -1px 0 #0096FF,
+  1px -1px 0 #0096FF,
+  -1px 1px 0 #0096FF,
+  1px 1px 0 #0096FF;
+}
+
+#rightDiv > p {
+  font-size: calc(1.8rem + .5vw);
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 
+  -1px -1px 0 #0096FF,
+  1px -1px 0 #0096FF,
+  -1px 1px 0 #0096FF,
+  1px 1px 0 #0096FF;
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    min-height: 100rem;
+    padding: calc(2rem + 1vw);
+  }
+
+  #skillExpress {
+    display: block;
+    width: 100%;
+  }
+
+  #skillExpress > * {
+    width: auto;
+  }
+
+  #leftDiv {
+    float: left;
+  }
+
+  #weightlift {
+    float: left;
+  }
+
+  #leftDiv > h3 {
+    text-align: left;
+  }
+
+  #leftDiv > p {
+    width: 50%;
+    margin-left: calc(.5rem + 1vw);
+  }
+
+  #rightDiv {
+    float: right;
+    text-align: right;
+  }
+
+  #rightDiv > h3 {
+    margin-top: 5rem;
+  }
+
+  #mushrooms {
+    float: right;
+  }
+
+  #rightDiv > p {
     display: inline-block;
-    position: absolute;
-    bottom: calc(8% - 5.5vw);
-    right: 10%;
-    z-index: 1;
-    transform: scale(1, -1);
-    opacity: .6;
+    width: 50%;
+    margin-right: calc(.5rem + 1vw);
   }
 }
