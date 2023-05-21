@@ -20,7 +20,7 @@ header {
 :nth-child(1 of header > img) {
   position: absolute;
   top: calc(12% - 5vw);
-  width: calc(40rem + 30vw);
+  width: calc(30rem + 30vw);
   text-align: center;
   z-index: 1;
 }
@@ -119,6 +119,10 @@ header {
 #skillExpress > * {
   width: 100%;
   text-align: center;
+}
+
+.skillImg {
+  width: 80%;
 }
 
 h2 {
