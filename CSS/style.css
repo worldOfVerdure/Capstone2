@@ -151,7 +151,7 @@ h3 {
   1px 1px 0 #fff;
 }
 
-#leftDiv > p {
+.leftDiv > p {
   margin-bottom: calc(2rem + 1vw);
   font-size: calc(1.8rem + .5vw);
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -164,7 +164,7 @@ h3 {
   1px 1px 0 #0096FF;
 }
 
-#rightDiv > p {
+.rightDiv > p {
   font-size: calc(1.8rem + .5vw);
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: 400;
@@ -176,54 +176,28 @@ h3 {
   1px 1px 0 #0096FF;
 }
 
+footer {
+  clear: both;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.4rem;
+  margin-top: rem;
+}
+
+footer > img {
+  width: 15%;
+}
+
+a {
+  font-family: 'Nixie One', cursive;
+}
+
 @media screen and (min-width: 1000px) {
-  .container {
-    min-height: 100rem;
-    padding: calc(2rem + 1vw);
-  }
-
   #skillExpress {
-    display: block;
-    width: 100%;
-  }
-
-  #skillExpress > * {
-    width: auto;
-  }
-
-  #leftDiv {
-    float: left;
-  }
-
-  #weightlift {
-    float: left;
-  }
-
-  #leftDiv > h3 {
-    text-align: left;
-  }
-
-  #leftDiv > p {
-    width: 50%;
-    margin-left: calc(.5rem + 1vw);
-  }
-
-  #rightDiv {
-    float: right;
-    text-align: right;
-  }
-
-  #rightDiv > h3 {
-    margin-top: 5rem;
-  }
-
-  #mushrooms {
-    float: right;
-  }
-
-  #rightDiv > p {
-    display: inline-block;
-    width: 50%;
-    margin-right: calc(.5rem + 1vw);
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr 2fr;
+    gap: calc(1rem + 1vw);
   }
 }
